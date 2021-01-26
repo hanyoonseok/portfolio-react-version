@@ -1,12 +1,30 @@
 import React from 'react';
+import Nav from './Nav';
+import Fscreen from './Fscreen';
+import Aboutme from './Aboutme';
+import Skills from './Skills';
+import Mywork from './Mywork';
+import axios from 'axios';
+import Tube from './Tube';
+import YouTube from 'react-youtube';
 
+//https://www.youtube.com/watch?v=a9zj9XuzKF8
+//https://youtu.be/a9zj9XuzKF8
+    
 class App extends React.Component{
-  state={
-
-  };
-  render()
-  {
-    return(<div>hello</div>);
+  render(){
+    return(
+      <section>
+        <Nav />
+        <Fscreen />
+        <Aboutme />
+        <Skills />
+        <Mywork />
+        <div>
+          <Tube videoId='a9zj9XuzKF8' />
+        </div>
+      </section>
+    )
   }
 }
 export default App;
