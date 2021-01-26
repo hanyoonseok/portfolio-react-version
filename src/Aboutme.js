@@ -16,21 +16,21 @@ function Aboutme(){
             <div class="skill">
                 <div class="front">
                 <div class="logo">
-                    <img src="image/html.png" alt=""/>
+                    <img src="https://placeimg.com/40/40/2" alt=""/>
                 </div>
                 <div class="title">Front-end</div>
                 <div class="detail">HTML, CSS, Javascript, React</div>
                 </div>
                 <div class="back">
                 <div class="logo">
-                    <img src="image/backend.jpg" alt=""/>
+                    <img src="https://placeimg.com/40/40/3" alt=""/>
                 </div>
                 <div class="title">Back-end</div>
                 <div class="detail">Java, Javascript, Nodejs</div>
                 </div>
                 <div class="game">
                 <div class="logo">
-                    <img src="image/unity.jpg" alt=""/>
+                    <img src="https://placeimg.com/40/40/4" alt=""/>
                 </div>
                 <div class="title">Game</div>
                 <div class="detail">Unity</div>

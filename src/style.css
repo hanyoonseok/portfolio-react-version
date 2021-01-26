@@ -312,7 +312,7 @@ body{
     justify-content:center;
   }
   
-  .mywork .displays #on{
+  .mywork .displays button{
     animation:show 1s 1;
   }
   @keyframes show{
@@ -321,7 +321,8 @@ body{
   }
   
   
-  @media screen and (max-width:880px){
+  @media screen and (max-width:880px)
+  {
     .header{
       flex-direction:column;
       align-items:flex-start;
@@ -359,4 +360,5 @@ body{
       padding-right:10px;
     }
   }
+  
   

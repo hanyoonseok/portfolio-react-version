@@ -9,7 +9,7 @@ class Nav extends React.Component{
         return (
             <nav className="header">
                 <div className="name">Han Yoon Seok</div>
-                    <div className={this.state.active ? 'menus' : ' menus active'}>
+                    <div className={this.state.active ? 'menus active' : ' menus'}>
                         <i>Home</i>
                         <i>Skills</i>
                         <i>My work</i>

@@ -23,6 +23,14 @@ function Skills(){
                 <div class = "graph stack4">
                     <span> 75%</span>
                 </div>
+                <div class="name">React</div>
+                <div class = "graph stack2">
+                    <span> 70%</span>
+                </div>
+                <div class="name">NodeJS</div>
+                <div class = "graph stack3">
+                    <span> 65%</span>
+                </div>
             </div>
             <div class="metadata">Experience with all phases of the software life-cycle. Passion for learning new technologies. Capable of working within a team environment and independently. Ability to plan and time schedule, work under strict time pressure and adapt quickly when needed.</div>
         </div>

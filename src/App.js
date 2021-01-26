@@ -20,9 +20,6 @@ class App extends React.Component{
         <Aboutme />
         <Skills />
         <Mywork />
-        <div>
-          <Tube videoId='a9zj9XuzKF8' />
-        </div>
       </section>
     )
   }
