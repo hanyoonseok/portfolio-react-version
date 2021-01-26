@@ -32,11 +32,17 @@
 body{
   font-family:Roboto;
 }
-
+a{
+  text-decoration:none;
+}
+a:link{
+  color:#4b70fd;
+  font-style:normal;
+}
 .header {
     padding-left:var(---padding);
     padding-right:var(--side-padding);
-    background-color:var(--lightpurple-color);
+    background-color:rgba(138,121,173);
     color:var(--white-color);
     position:sticky;
     top:0;
@@ -58,6 +64,7 @@ body{
   
   .header i{
     padding: 8px var(--padding);
+    color:white;
   }
   
   .header i:hover{
@@ -67,6 +74,7 @@ body{
   .header .toggle{
     display:none;
     position:absolute;
+    top:8px;
     right:20px;
     font-size:18px;
     color:#d49466;

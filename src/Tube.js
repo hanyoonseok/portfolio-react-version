@@ -2,19 +2,13 @@ import React,{Component} from 'react';
 import YouTube from 'react-youtube';
 import './style.css';
 
+var url;
 class Tube extends Component{
     videoOnReady(event) {
-        const player = event.target;
-        player.seekTo(53)
-    }
-
-    videoOnPlay(event){
-        const player = event.target;
+      url = event.target.getVideoUrl();
     }
     render() {
       const opts = {
-        height: '390',
-        width: '640',
         playerVars: {
         autoplay: 1,
         },
@@ -34,10 +28,9 @@ class Tube extends Component{
           <div className="modal-foot">
             <h1>키보드와 마우스로 반응하는 블록 계산기</h1>
             <p>사용 언어 : HTML, CSS, Javascript</p>
-            <p>Go to Link : <a href="https://www.youtube.com/watch?v=a9zj9XuzKF8">https://www.youtube.com/watch?v=a9zj9XuzKF8</a></p>
+            <p>Go to Link : <a href={'https://www.youtube.com/watch?v=' + videoId}>https://www.youtube.com/watch?v={videoId}</a></p>
           </div>
         </section>
-      
       )}
 }
 

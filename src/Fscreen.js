@@ -1,7 +1,6 @@
 import React,{Component, useState} from 'react';
 import "./style.css";
 import Modal from 'react-modal';
-import Tube from './Tube';
 
 const customStyles = {
     content : {
@@ -10,7 +9,8 @@ const customStyles = {
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
+      transform             : 'translate(-50%, -50%)',
+      backgroundColor:'papayawhip'
     }
 };
 
@@ -24,13 +24,15 @@ function Fscreen(){
     function afterOpenModal() {
         subtitle.style.color='#f00';
         closeBtn.style.border='1px solid white';
+        closeBtn.style.color='black';
+        closeBtn.style.backgroundColor='transparent';
     }
     
     function closeModal(){
         setIsOpen(false);
     }
     return(
-        <div class="fscreen">
+        <div class="fscreen" id="fscreen">
             <div class="profile">
                 <img src="https://placeimg.com/40/40/1" alt=""/>
             </div>
@@ -52,10 +54,10 @@ function Fscreen(){
                 onRequestClose={closeModal}
                 style={customStyles}>
                 <button ref={_closeBtn =>(closeBtn = _closeBtn)}onClick={closeModal}>X</button>
-                <div className="modal-title">
+                <div>
                     <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> 
                 </div>
-                <span className="modal-subtitle">
+                <span>
                     <h5 className="modal-metadata">Phone :</h5> 
                 </span>
             </Modal>

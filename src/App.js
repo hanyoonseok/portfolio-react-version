@@ -4,9 +4,6 @@ import Fscreen from './Fscreen';
 import Aboutme from './Aboutme';
 import Skills from './Skills';
 import Mywork from './Mywork';
-import axios from 'axios';
-import Tube from './Tube';
-import YouTube from 'react-youtube';
 
 //https://www.youtube.com/watch?v=a9zj9XuzKF8
 //https://youtu.be/a9zj9XuzKF8
