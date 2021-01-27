@@ -34,6 +34,7 @@ body{
 }
 a{
   text-decoration:none;
+  color:white;
 }
 a:link{
   color:#4b70fd;
@@ -311,7 +312,7 @@ a:link{
     outline:none;
     color:var(--black-color);
     margin-top:5px;
-    background-image:url("image/img.jpg");
+    margin-right:5px;
   }
   
   .mywork .displays{

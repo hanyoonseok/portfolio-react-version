@@ -15,25 +15,32 @@ function Aboutme(){
             </div>
             <div class="skill">
                 <div class="front">
-                <div class="logo">
-                    <img src="https://placeimg.com/40/40/2" alt=""/>
-                </div>
-                <div class="title">Front-end</div>
-                <div class="detail">HTML, CSS, Javascript, React</div>
+                    <div class="logo">
+                        <img src="https://placeimg.com/40/40/2" alt=""/>
+                    </div>
+                    <div class="title">Front-end</div>
+                    <div class="detail">HTML, CSS, Javascript, React</div>
                 </div>
                 <div class="back">
-                <div class="logo">
-                    <img src="https://placeimg.com/40/40/3" alt=""/>
-                </div>
-                <div class="title">Back-end</div>
-                <div class="detail">Java, Javascript, Nodejs</div>
+                    <div class="logo">
+                        <img src="https://placeimg.com/40/40/3" alt=""/>
+                    </div>
+                    <div class="title">Back-end</div>
+                    <div class="detail">Java, Javascript, Nodejs</div>
                 </div>
                 <div class="game">
-                <div class="logo">
-                    <img src="https://placeimg.com/40/40/4" alt=""/>
+                    <div class="logo">
+                        <img src="https://placeimg.com/40/40/4" alt=""/>
+                    </div>
+                    <div class="title">Game</div>
+                    <div class="detail">Unity, C#, C++</div>
                 </div>
-                <div class="title">Game</div>
-                <div class="detail">Unity</div>
+                <div class="db">
+                    <div class="logo">
+                        <img src="https://placeimg.com/40/40/5" alt=""/>
+                    </div>
+                    <div class="title">Database</div>
+                    <div class="detail">MySQL</div>
                 </div>
             </div>
         </div>

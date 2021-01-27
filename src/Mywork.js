@@ -20,7 +20,9 @@ class Mywork extends Component{
     state={
         cat:'all',
         modalIsOpen:false,
-        id:''
+        vid:'',
+        title:'',
+        language:''
     }
 
     openModal=()=> {
@@ -46,32 +48,42 @@ class Mywork extends Component{
                 </div>
                 <span className="displays">
                     {this.state.cat==='thr' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); this.setState({id:'a9zj9XuzKF8'})}}>c</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'a9zj9XuzKF8', title:'키보드와 마우스로 반응하는 블록 계산기', language:'HTML, CSS, JAVASCRIPT'})}}>c</button>:null}
                     {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); this.setState({id:'vZ7TW-E5Xi4'})}}>b</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'vZ7TW-E5Xi4', title:'3D 로그라이크 게임', language:'Unity3D, C#'})}}>b</button>:null}
                     {this.state.cat==='fou' || this.state.cat==='all' ? 
-                    <button>d</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>d</button>:null}
                     {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button>b</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
                     {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button>b</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
                     {this.state.cat==='thr' || this.state.cat==='all' ? 
-                    <button>c</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>c</button>:null}
                     {this.state.cat==='fou' || this.state.cat==='all' ? 
-                    <button>d</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>d</button>:null}
                     {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button>b</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
                     {this.state.cat==='thr' || this.state.cat==='all' ? 
-                    <button>c</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>c</button>:null}
                     {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button>b</button>:null}
+                    <button onClick={()=>{this.openModal(); 
+                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
                 </span>
                 <Modal
                 isOpen={this.state.modalIsOpen}
                 onAfterOpen={this.afterOpenModal}
                 onRequestClose={this.closeModal}
                 style={customStyles}>
-                <Tube videoId={this.state.id}/>
+                <Tube videoId={this.state.vid} title={this.state.title} language={this.state.language}/>
             </Modal>
             </div>
         )
