@@ -10,27 +10,31 @@ const customStyles = {
       bottom                : 'auto',
       marginRight           : '-50%',
       transform             : 'translate(-50%, -50%)',
-      backgroundColor:'papayawhip'
+      backgroundColor:'rgba(138,121,173)',
+      color:'white'
     }
 };
 
 function Fscreen(){
-    var subtitle, closeBtn;
     const [modalIsOpen,setIsOpen] = React.useState(false);
+
     function openModal() {
         setIsOpen(true);
-    }
-    
-    function afterOpenModal() {
-        subtitle.style.color='#f00';
-        closeBtn.style.border='1px solid white';
-        closeBtn.style.color='black';
-        closeBtn.style.backgroundColor='transparent';
     }
     
     function closeModal(){
         setIsOpen(false);
     }
+    const imgsrc={
+        width:'50px',
+        height:'50px',
+        backgroundImage:"url(image/mail.png)",
+        backgroundPosition:'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        
+    }
+
     return(
         <div class="fscreen" id="fscreen">
             <div class="profile">
@@ -50,15 +54,18 @@ function Fscreen(){
             </div>
             <Modal
                 isOpen={modalIsOpen}
-                onAfterOpen={afterOpenModal}
+                //onAfterOpen={afterOpenModal}
                 onRequestClose={closeModal}
                 style={customStyles}>
-                <button ref={_closeBtn =>(closeBtn = _closeBtn)}onClick={closeModal}>X</button>
+                <button onClick={closeModal}>X</button>
                 <div>
-                    <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2> 
+                    <h2>Hello</h2> 
                 </div>
                 <span>
-                    <h5 className="modal-metadata">Phone :</h5> 
+                    <p><button style={imgsrc}></button> : 01042554045</p>
+                    <p><img src="image/instagram.png"/> : yoon_sok</p>
+                    <p><img src="image/mail.png"/> : hys6078@naver.com</p>
+                    <p><img src="image/github.png"/> : https://github.com/hanyoonseok</p>
                 </span>
             </Modal>
         </div>

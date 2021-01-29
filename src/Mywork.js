@@ -43,6 +43,7 @@ class Mywork extends Component{
                     <button onClick={()=>{this.setState({cat:'front'});}}>Front-end</button>
                     <button onClick={()=>{this.setState({cat:'back'});}}>Back-end</button>
                     <button onClick={()=>{this.setState({cat:'game'});}}>Game</button>
+                    <button onClick={()=>{this.setState({cat:'etc'});}}>ETC</button>
                     <img src="image/add.png" className="addBtn" onClick={()=>this.setState({active:!this.state.active})}/>
                 </div>
                 <span className={this.state.active ? 'add active' : 'add'}>
