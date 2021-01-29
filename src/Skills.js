@@ -1,4 +1,4 @@
-import React,{Component} from 'react';
+import React from 'react';
 import './style.css';
 
 function Skills(){
@@ -32,7 +32,9 @@ function Skills(){
                     <span> 65%</span>
                 </div>
             </div>
-            <div class="metadata">Experience with all phases of the software life-cycle. Passion for learning new technologies. Capable of working within a team environment and independently. Ability to plan and time schedule, work under strict time pressure and adapt quickly when needed.</div>
+            <div className="frame">
+                    Experience with all phases of the software life-cycle. Passion for learning new technologies. Capable of working within a team environment and independently. Ability to plan and time schedule, work under strict time pressure and adapt quickly when needed.
+            </div>
         </div>
     );
 }

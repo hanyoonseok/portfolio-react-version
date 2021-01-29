@@ -190,10 +190,10 @@ a:link{
   }
   
   .skills .frame{
-    margin-left:120px;
-    margin-right:120px;
+    margin:20px 120px;
     padding: var(--padding) var(--padding);
     background-color:rgba(255,255,255,0.3);
+    border-radius:10px;
   }
   
   .skills .frame .name{
@@ -303,6 +303,30 @@ a:link{
     background-color:orange;
     color:white;
   }
+
+  .mywork .okbtn{
+    margin-left:10px;
+    background-color:#88cef6;
+    outline:none;
+    cursor:pointer;
+    border:1px solid lightgray;
+    width:50px;
+  }
+
+  .mywork .add{
+    display:none;
+    justify-content: center;
+    margin:var(--padding);
+  }
+
+  .mywork .add.active{
+    display:flex;
+  }
+
+  .mywork .add input{
+    width:200px;
+    height:25px;
+  }
   
   .mywork .displays button{
     width:250px;
@@ -363,10 +387,6 @@ a:link{
     .skills .frame{
       margin-left:10px;
       margin-right:10px;
-    }
-    .skills .metadata{
-      padding-left:10px;
-      padding-right:10px;
     }
   }
   

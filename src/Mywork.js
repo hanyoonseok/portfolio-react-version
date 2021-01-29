@@ -1,38 +1,36 @@
 import React,{Component} from 'react';
 import './style.css';
-import Tube from './Tube';
-import Modal from 'react-modal';
-
-const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)',
-      backgroundColor:'rgba(138,121,173)',
-      color:'white'
-    }
-};
+import Axios from 'axios';
+import Proj from './Proj';
 
 class Mywork extends Component{
     state={
         cat:'all',
-        modalIsOpen:false,
-        vid:'',
-        title:'',
-        language:''
+        active:false,
+        VidList:[],
+        Vid:'',
+        Title:'',
+        Language:'',
+        Category:'',
+    }
+    //아래 주소로부터 update된 vidlist를 가져옴
+    getVidList=async()=>{
+        Axios.get('http://localhost:3001/api/get')
+        .then((response)=>{
+            this.setState({VidList:response.data});
+        })
+    }
+    componentDidMount(){
+        this.getVidList();
     }
 
-    openModal=()=> {
-        this.setState({modalIsOpen:true});
-    }
-    afterOpenModal=()=>{
-    }
-    
-    closeModal=()=>{
-        this.setState({modalIsOpen:false});
+    //추가버튼 클릭이벤트
+    //아래 주소로 정보 보냄
+    submitProject =() =>{
+        Axios.post('http://localhost:3001/api/insert', 
+        {vid: this.state.Vid, title:this.state.Title, language:this.state.Language, category:this.state.Category});
+        //update newly added list 구현해야돼 이거 에러나
+        //this.setState({VidList:{vid:this.state.Vid, title:this.state.Title, language:this.state.Language, category:this.state.Category}});
     }
 
     render(){
@@ -41,50 +39,27 @@ class Mywork extends Component{
                 <div className="title">My work</div>
                 <div className = "subtitle"> Projects</div>
                 <div className="btns">
-                    <button className="one" onClick={()=>{this.setState({cat:'all'});}}>All</button>
-                    <button className="two" onClick={()=>{this.setState({cat:'two'});}}>Front-end</button>
-                    <button className="thr" onClick={()=>{this.setState({cat:'thr'});}}>Back-end</button>
-                    <button className="fou" onClick={()=>{this.setState({cat:'fou'});}}>Game</button>
+                    <button onClick={()=>{this.setState({cat:'all'});}}>All</button>
+                    <button onClick={()=>{this.setState({cat:'front'});}}>Front-end</button>
+                    <button onClick={()=>{this.setState({cat:'back'});}}>Back-end</button>
+                    <button onClick={()=>{this.setState({cat:'game'});}}>Game</button>
+                    <img src="image/add.png" className="addBtn" onClick={()=>this.setState({active:!this.state.active})}/>
                 </div>
-                <span className="displays">
-                    {this.state.cat==='thr' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'a9zj9XuzKF8', title:'키보드와 마우스로 반응하는 블록 계산기', language:'HTML, CSS, JAVASCRIPT'})}}>c</button>:null}
-                    {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'vZ7TW-E5Xi4', title:'3D 로그라이크 게임', language:'Unity3D, C#'})}}>b</button>:null}
-                    {this.state.cat==='fou' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>d</button>:null}
-                    {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
-                    {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
-                    {this.state.cat==='thr' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>c</button>:null}
-                    {this.state.cat==='fou' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>d</button>:null}
-                    {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
-                    {this.state.cat==='thr' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>c</button>:null}
-                    {this.state.cat==='two' || this.state.cat==='all' ? 
-                    <button onClick={()=>{this.openModal(); 
-                    this.setState({vid:'', title:'', language:''})}}>b</button>:null}
+                <span className={this.state.active ? 'add active' : 'add'}>
+                    <div className="input">
+                        <div><input type="text" placeholder=" VIDEO ID" onChange={(e)=>{this.setState({Vid:e.target.value})}}/></div>
+                        <div><input type="text" placeholder=" TITLE" onChange={(e)=>{this.setState({Title:e.target.value})}}/></div>
+                        <div><input type="text" placeholder=" LANGUAGE" onChange={(e)=>{this.setState({Language:e.target.value})}}/></div>
+                        <div><input type="text" placeholder=" CATEGORY ex) front, back, game" onChange={(e)=>{this.setState({Category:e.target.value})}}/></div>
+                    </div>
+                    <button className="okbtn" onClick={()=>{this.submitProject(); this.setState({active:false})}}>확인</button>
                 </span>
-                <Modal
-                isOpen={this.state.modalIsOpen}
-                onAfterOpen={this.afterOpenModal}
-                onRequestClose={this.closeModal}
-                style={customStyles}>
-                <Tube videoId={this.state.vid} title={this.state.title} language={this.state.language}/>
-            </Modal>
+                <span className="displays">
+                    {this.state.VidList.map(val=>(
+                        (val.category===this.state.cat || this.state.cat==='all' ? 
+                        <Proj vid={val.vid} title={val.title} language={val.language} category={val.category}/> : null)
+                        ))} 
+                </span>
             </div>
         )
     }
