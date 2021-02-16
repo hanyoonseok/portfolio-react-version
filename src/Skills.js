@@ -15,7 +15,7 @@ function Skills(){
                 <div class = "graph stack2">
                     <span> 70%</span>
                 </div>
-                <div class="name">JS</div>
+                <div class="name">JavaScript</div>
                 <div class = "graph stack3">
                     <span> 65%</span>
                 </div>
@@ -33,7 +33,7 @@ function Skills(){
                 </div>
             </div>
             <div className="frame">
-                    Experience with all phases of the software life-cycle. Passion for learning new technologies. Capable of working within a team environment and independently. Ability to plan and time schedule, work under strict time pressure and adapt quickly when needed.
+                <span className="metadata">Experience with all phases of the software life-cycle. Passion for learning new technologies. Capable of working within a team environment and independently. Ability to plan and time schedule, work under strict time pressure</span>
             </div>
         </div>
     );

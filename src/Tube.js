@@ -11,6 +11,8 @@ class Tube extends Component{
     }
     render() {
       const opts = {
+        width:600,
+        height:500,
         playerVars: {
         autoplay: 1,
         },

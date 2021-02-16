@@ -11,7 +11,7 @@ const customStyles = {
       bottom                : 'auto',
       marginRight           : '-50%',
       transform             : 'translate(-50%, -50%)',
-      backgroundColor:'rgba(138,121,173)',
+      backgroundColor:'black',
       color:'white'
     }
 };

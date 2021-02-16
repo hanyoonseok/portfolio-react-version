@@ -16,10 +16,10 @@
   --avatar-size:36px;
 
   /*font size*/
-  --font-title:30px;
-  --font-large:18px;
+  --font-title:60px;
+  --font-subtitle:25px;
+  --font-large:20px;
   --font-medium:14px;
-  --font-small:12px;
   --font-micro:10px;
 }
 
@@ -27,11 +27,9 @@
   padding:0;
   margin:0;
   box-sizing:border-box;
+  font-family: 'PT Sans', sans-serif;
 }
 
-body{
-  font-family:Roboto;
-}
 a{
   text-decoration:none;
   color:white;
@@ -43,14 +41,14 @@ a:link{
 .header {
     padding-left:var(---padding);
     padding-right:var(--side-padding);
-    background-color:rgba(138,121,173);
+    background-color:black;
     color:var(--white-color);
     position:sticky;
     top:0;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    border-bottom:1px solid var(--grey-light-color);
+    z-index: 999;
   }
   
   .header .menus{
@@ -66,6 +64,7 @@ a:link{
   .header i{
     padding: 8px var(--padding);
     color:white;
+    font-size: var(--font-large);
   }
   
   .header i:hover{
@@ -75,60 +74,74 @@ a:link{
   .header .toggle{
     display:none;
     position:absolute;
-    top:8px;
+    top:3px;
     right:20px;
     font-size:18px;
     color:#d49466;
   }
-
+  video{
+    object-fit: cover;
+    width:100%;
+    height: 100%;
+    position:fixed;
+    z-index:-1;
+}
   .fscreen{
-    padding-top:var(--section-padding);
+    /* padding-top:var(--section-padding);
     padding-bottom:var(--section-padding);
     background-image: url("image/background.jpg");
     background-repeat:no-repeat;
-    background-size:cover;
+    background-size:cover; 
     color:var(--white-color);
-    text-align:center;
-  
+    text-align:center; */
+    height:100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.2);
+    color:#fff;
+    object-fit: contain;
   }
   
-  .fscreen .introduce{
+  .fscreen h1{
     padding-top:var(--padding);
-    font-size:var(--font-title);
+    font-size:80px;
   }
   
-  .fscreen .profile img{
-    height:200px;
-    width:200px;
+  .fscreen .profile{
+    height:250px;
+    width:250px;
     border-radius:50%;
   }
   
-  .fscreen .metadata{
-    padding-top:var(--padding);
-    padding-bottom:var(--padding);
-  }
-  
   .fscreen .contact button{
-    width:100px;
-    height:30px;
-    border:1px solid white;
+    width:150px;
+    height:50px;
+    border:2px solid white;
     cursor:pointer;
     outline:none;
     color:white;
     background-color:transparent;
+    margin-top:18px;
+    font-size: 24px;
+    border-radius: 2px;
   }
   
   .fscreen .contact button:hover{
-    border:1px solid red;
-    color:red;
+    background-color: white;
+    color:black;
   }
 
+  
   .aboutme{
     padding-top:var(--section-padding);
     padding-bottom:var(--section-padding);
     padding-left:var(--side-padding);
     padding-right:var(--side-padding);
     text-align:center;
+    background-color: #fff;
   }
   
   .aboutme > .title{
@@ -136,12 +149,23 @@ a:link{
     font-weight:bold;
     padding-bottom:20px;
   }
-  
+  .aboutme h2{
+    margin-bottom: 20px;
+    margin-top:20px;
+    color:gray
+  }
   .aboutme .metadata{
     width:100%;
     padding-bottom:20px;
+    font-size: var(--font-large);
   }
   
+  .aboutme .two{
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+  }
+
   .aboutme .skill{
     display:flex;
     justify-content:space-around;
@@ -173,9 +197,6 @@ a:link{
     padding-right:var(--side-padding);
     color:white;
     text-align:center;
-    background-image: url("image/background.jpg");
-    background-repeat:no-repeat;
-    background-size:cover;
   }
   
   .skills .title{
@@ -185,22 +206,27 @@ a:link{
   }
   
   .skills .subtitle{
-    font-size:var(--font-small);
+    font-size:var(--font-subtitle);
     padding-bottom:var(--padding);
   }
   
   .skills .frame{
-    margin:20px 120px;
-    padding: var(--padding) var(--padding);
-    background-color:rgba(255,255,255,0.3);
+    margin:40px 80px;
+    padding:20px var(--padding);
+    background-color:rgba(0,0,0,0.7);
     border-radius:10px;
   }
   
   .skills .frame .name{
-    color:black;
     text-align:left;
     padding:6px var(--padding);
+    font-size: var(--font-large);
   }
+
+  .skills .frame .metadata{
+    font-size: var(--font-large);
+  }
+
   .skills .graph{
     background-color:gray;
     height:30px;
@@ -233,7 +259,7 @@ a:link{
   }
   .skills .graph.stack4 span{
     width:75%;
-    animation:stack4 2s 1;
+    animation:stack1 2s 1;
   }
   @keyframes stack1{
       0%{width:0; color:rgba(255,255,255,0);}
@@ -250,11 +276,6 @@ a:link{
       50%{color:rgba(255,255,255,1);}
       100%{width:65%;}
   }
-  @keyframes stack4{
-      0%{width:0; color:rgba(255,255,255,0);}
-      50%{color:rgba(255,255,255,1);}
-      100%{width:75%;}
-  }
 
   .mywork{
     padding-top:var(--section-padding);
@@ -262,6 +283,7 @@ a:link{
     padding-left:var(--side-padding);
     padding-right:var(--side-padding);
     text-align:center;
+    background-color: white;
   }
   
   .mywork .title{
@@ -272,7 +294,7 @@ a:link{
   
   .mywork .subtitle{
     padding-bottom:var(--padding);
-    font-size:var(--font-small);
+    font-size:var(--font-subtitle);
   }
   
   .mywork .btns{
@@ -289,11 +311,25 @@ a:link{
     outline:none;
     color:var(--black-color);
     background-color:transparent;
+    border-radius:2px;
+    font-size: var(--font-medium);
   }
   
   .mywork .btns button:focus{
     background-color:orange;
     color:white;
+  }
+
+  .mywork .btns button:hover{
+    background-color:orange;
+    color:white;
+  }
+
+  .mywork .btns .addBtn{
+    background-color: lightgreen;
+    border-radius: 20px;
+    outline:none;
+    margin-left:10px;
   }
 
   .mywork .okbtn{
@@ -327,8 +363,9 @@ a:link{
     cursor:pointer;
     outline:none;
     color:var(--black-color);
-    margin-top:5px;
-    margin-right:5px;
+    margin-top:20px;
+    margin-right:20px;
+    border-radius:5px;
   }
   
   .mywork .displays{
@@ -374,12 +411,24 @@ a:link{
   
     .header .menus.active{
       display:flex;
+      z-index: 1;
+    }
+
+    .aboutme .two{
+      flex-direction: column;
+    }
+
+    .aboutme .two .logo{
+      margin-top:10px;
     }
 
     .skills .frame{
       margin-left:10px;
       margin-right:10px;
     }
-  }
+}
   
-  
+.mmovie button:hover{
+  transform:scale(1.1);
+  box-shadow: 0 6px 20px rgba(56, 126, 255 ,0.17);
+}

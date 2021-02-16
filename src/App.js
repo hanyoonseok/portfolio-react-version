@@ -1,20 +1,18 @@
-import React,{useState, useEffect} from 'react';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Nav from './Nav';
-import Fscreen from './Fscreen';
-import Aboutme from './Aboutme';
-import Skills from './Skills';
-import Mywork from './Mywork';
+import Home from './Home';
 
 function App(){
-  
   return(
     <div>
       <section>
-        <Nav />
-        <Fscreen />
-        <Aboutme />
-        <Skills />
-        <Mywork />
+        <Router>
+          <Nav />
+          <Switch>
+            <Route path='/' exact component={Home}/>
+          </Switch>
+        </Router>
       </section>
     </div>
   )

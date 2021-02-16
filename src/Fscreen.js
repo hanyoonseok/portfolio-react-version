@@ -10,7 +10,7 @@ const customStyles = {
       bottom                : 'auto',
       marginRight           : '-50%',
       transform             : 'translate(-50%, -50%)',
-      backgroundColor:'rgba(138,121,173)',
+      backgroundColor:'black',
       color:'white'
     }
 };
@@ -26,32 +26,22 @@ function Fscreen(){
         setIsOpen(false);
     }
     const imgsrc={
-        width:'50px',
-        height:'50px',
-        backgroundImage:"url(image/mail.png)",
+        width:'15px',
+        height:'15px',
         backgroundPosition:'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        
     }
 
     return(
         <div class="fscreen" id="fscreen">
-            <div class="profile">
-                <img src="https://placeimg.com/40/40/1" alt=""/>
-            </div>
-            <div class="introduce">
-                <p>Hello,</p>
-                <p>I'm YoonSeok Han</p>
-            </div>
-
-            <div class="metadata">
-                <p>97. 01. 30.</p>
-                <p>Majored in Computer Software in KwangWoon Univ.</p>
-            </div>
+            <video src="videos/video-1.mp4" autoPlay loop muted />
+            <img src="https://placeimg.com/40/40/1" className="profile" alt=""/>
+            <h1><p>Hello,</p>I'm YoonSeok-Han</h1>
             <div class="contact">
                 <button onClick={openModal}> contact me</button>
             </div>
+
             <Modal
                 isOpen={modalIsOpen}
                 //onAfterOpen={afterOpenModal}
@@ -61,11 +51,11 @@ function Fscreen(){
                 <div>
                     <h2>Hello</h2> 
                 </div>
-                <span>
-                    <p><button style={imgsrc}></button> : 01042554045</p>
-                    <p><img src="image/instagram.png"/> : yoon_sok</p>
-                    <p><img src="image/mail.png"/> : hys6078@naver.com</p>
-                    <p><img src="image/github.png"/> : https://github.com/hanyoonseok</p>
+                <span className="modalImg">
+                    <p><img style={imgsrc} src=""/> : 01042554045</p>
+                    <p><img style={imgsrc} src="image/instagram.png"/> : yoon_sok</p>
+                    <p><img style={imgsrc} src="image/mail.png"/> : hys6078@naver.com</p>
+                    <p><img style={imgsrc} src="image/github.png"/> : https://github.com/hanyoonseok</p>
                 </span>
             </Modal>
         </div>

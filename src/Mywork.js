@@ -39,12 +39,12 @@ class Mywork extends Component{
                 <div className="title">My work</div>
                 <div className = "subtitle"> Projects</div>
                 <div className="btns">
-                    <button onClick={()=>{this.setState({cat:'all'});}}>All</button>
-                    <button onClick={()=>{this.setState({cat:'front'});}}>Front-end</button>
-                    <button onClick={()=>{this.setState({cat:'back'});}}>Back-end</button>
-                    <button onClick={()=>{this.setState({cat:'game'});}}>Game</button>
-                    <button onClick={()=>{this.setState({cat:'etc'});}}>ETC</button>
-                    <img src="image/add.png" className="addBtn" onClick={()=>this.setState({active:!this.state.active})}/>
+                    <button onClick={()=>{this.setState({cat:'all', active:false});}}>All</button>
+                    <button onClick={()=>{this.setState({cat:'front', active:false});}}>Front-end</button>
+                    <button onClick={()=>{this.setState({cat:'back', active:false});}}>Back-end</button>
+                    <button onClick={()=>{this.setState({cat:'game', active:false});}}>Game</button>
+                    <button onClick={()=>{this.setState({cat:'etc', active:false});}}>ETC</button>
+                    <button className="addBtn" onClick={()=>this.setState({active:!this.state.active, cat:''})}>Add</button>
                 </div>
                 <span className={this.state.active ? 'add active' : 'add'}>
                     <div className="input">
