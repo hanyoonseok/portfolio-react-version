@@ -13,6 +13,7 @@ function Aboutme(){
                 I enjoy collaborating project with others. I have collaborated project during every semester, even my graduate project.
                 I participated in a game develope club and photo club so that I gain various experience.
                 Here is my Github and youtube link. Please enjoy my portfolio.
+                <p style={{opacity:0}}>.</p>
                 <p>Github link : https://github.com/hanyoonseok</p>
             </div>
             <div class="skill">

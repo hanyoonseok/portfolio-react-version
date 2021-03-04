@@ -9,27 +9,27 @@ function Skills(){
             <div class="frame">
                 <div class="name">HTML</div>
                 <div class = "graph stack1">
-                    <span> 75%</span>
+                    <span> 85%</span>
                 </div>
                 <div class="name">CSS</div>
                 <div class = "graph stack2">
-                    <span> 70%</span>
+                    <span> 80%</span>
                 </div>
                 <div class="name">JavaScript</div>
-                <div class = "graph stack3">
-                    <span> 65%</span>
+                <div class = "graph stack1">
+                    <span> 85%</span>
                 </div>
                 <div class="name">Unity</div>
-                <div class = "graph stack4">
-                    <span> 75%</span>
+                <div class = "graph stack2">
+                    <span> 80%</span>
                 </div>
                 <div class="name">React</div>
-                <div class = "graph stack2">
+                <div class = "graph stack3">
                     <span> 70%</span>
                 </div>
                 <div class="name">NodeJS</div>
                 <div class = "graph stack3">
-                    <span> 65%</span>
+                    <span> 70%</span>
                 </div>
             </div>
             <div className="frame">

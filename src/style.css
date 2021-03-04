@@ -245,36 +245,32 @@ a:link{
     
   }
   .skills .graph.stack1 span{
-    width:75%;
+    width:85%;
     animation:stack1 2s 1;
     /* 애니메이션 이름, 수행할 시간, 수행할 횟수 */
   }
   .skills .graph.stack2 span{
-    width:70%;
+    width:80%;
     animation:stack2 2s 1;
   }
   .skills .graph.stack3 span{
-    width:65%;
+    width:70%;
     animation:stack3 2s 1;
-  }
-  .skills .graph.stack4 span{
-    width:75%;
-    animation:stack1 2s 1;
   }
   @keyframes stack1{
       0%{width:0; color:rgba(255,255,255,0);}
       50%{color:rgba(255,255,255,1);}
-      100%{width:75%;}
+      100%{width:85%;}
   }
   @keyframes stack2{
       0%{width:0; color:rgba(255,255,255,0);}
       50%{color:rgba(255,255,255,1);}
-      100%{width:70%;}
+      100%{width:80%;}
   }
   @keyframes stack3{
       0%{width:0; color:rgba(255,255,255,0);}
       50%{color:rgba(255,255,255,1);}
-      100%{width:65%;}
+      100%{width:70%;}
   }
 
   .mywork{
@@ -295,6 +291,7 @@ a:link{
   .mywork .subtitle{
     padding-bottom:var(--padding);
     font-size:var(--font-subtitle);
+    color:gray;
   }
   
   .mywork .btns{
@@ -428,7 +425,11 @@ a:link{
     }
 }
   
+@keyframes buttonHover{
+  0%{transform:scale(1.0);}
+  100%{transform:scale(1.1);}
+}
 .mmovie button:hover{
-  transform:scale(1.1);
+  animation:buttonHover 0.3s forwards;
   box-shadow: 0 6px 20px rgba(56, 126, 255 ,0.17);
 }

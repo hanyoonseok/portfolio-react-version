@@ -37,7 +37,6 @@ function Proj({vid, title, language, category}){
     <span>
      <div className="mmovie">
          <button style={btnstyle} onClick={()=>{openModal()}}></button>
-         
      </div>
      <Modal
         isOpen={modalIsOpen}
